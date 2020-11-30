@@ -1,1 +1,0 @@
-To run code, use "go run main.go" in the root directory
