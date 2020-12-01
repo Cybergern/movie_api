@@ -4,4 +4,4 @@ To run as a docker image, build with `docker build -t go-docker-prod .` and run 
 
 Access api at http://localhost:8080/movies
 
-To run the tests, run "go test movies" in the project root.
+To run the tests, run `go test movies` in the project root.
