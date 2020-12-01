@@ -1,1 +1,0 @@
-To run code, use "go run src/api-test/main.go" in the root directory and then access http://localhost:8080/movies
