@@ -18,7 +18,7 @@ func makeRequest(method string, headers map[string]string, t *testing.T) *httpte
 	}
 	rr := httptest.NewRecorder()
 	finalHandler := http.HandlerFunc(GetMovies)
-	Middleware(finalHandler).ServeHTTP(rr, req)
+	HeaderMethodCheck(finalHandler).ServeHTTP(rr, req)
 	return rr
 }
 
@@ -33,7 +33,9 @@ func TestGetMovies(t *testing.T) {
 	}
 
 	if strings.TrimSpace(rr.Body.String()) != string(expected) {
-		t.Errorf("Handler returned unexpected response body: got %v want %v", rr.Body.String(), string(expected))
+		t.Errorf("Handler returned unexpected response body: got %v want %v",
+			strings.TrimSpace(rr.Body.String()),
+			string(expected))
 	}
 }
 
